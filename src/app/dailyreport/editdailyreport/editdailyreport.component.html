@@ -1,0 +1,58 @@
+<h3>Edit Daily report</h3>
+<form [formGroup]="heroForm" (ngSubmit)="onsubmit(heroForm)">
+
+<div class="card">
+  <div class="row">
+    <div class="col-sm-4">
+      <label for="">Date*</label><br>
+      <p-calendar formControlName="date" dateFormat="dd.mm.yy"></p-calendar>
+    </div>
+    <div class="col-sm-4">
+        <label for="">Greenhouse*</label>
+      <select class="form-control"  formControlName="Greenhouse" >
+        <option *ngFor="let city of cities" value="{{city.name}}">{{city.name}}</option>
+      </select>
+      </div>
+  </div>
+
+
+</div>
+<div class="card mt-4" formArrayName="itemRows" >
+  <h5>Add report</h5>
+  <div class="row mt-5" *ngFor="let itemrow of heroForm.get('itemRows').controls; let i=index"  [formGroupName]="i">
+      <div class="col-sm-4 mt-2">
+        <label for="">Slno*</label><br>
+        <input type="text" value="{{i+1}}" >  
+      </div>
+      <div class="col-sm-4  mt-2">
+        <label for="">Description*</label><br>
+          <input type="text" formControlName="description">  
+        </div>
+        <div class="col-sm-4  mt-2">
+          <label for="">Manpoer used*</label><br>
+            <input type="text" formControlName="manpower">  
+          </div>
+          <div class="col-sm-4  mt-2">
+            <label for="">Remarks*</label><br>
+              <input type="text" formControlName="remarks">  
+            </div>
+          <div class="col-sm-4  mt-2">
+             <button class="btn btn-danger mt-3" (click)="deleteRow(i)"><i class="fas fa-trash-alt"></i></button>
+              </div>
+  </div>
+  <div class="row mt-5">
+      <div class="col-sm-4">
+          <button class="btn btn-primary" type="button" (click)="addNewRow()"><i class="fas fa-plus-square"></i></button>
+           </div>
+           <div class="col-sm-4">
+            <button class="btn btn-primary" [disabled]="!heroForm.valid" type="submit"  >Update</button>
+             </div>
+    </div>
+
+
+
+
+</div>
+
+
+</form>

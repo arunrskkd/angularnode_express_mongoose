@@ -1,0 +1,25 @@
+<div class="alert alert-success " role="alert">
+  View Products
+ </div>
+ <div class="row">
+    <div class="col-lg-12 mb-3">
+        <div class="card">
+                <table  class="table table-bordered table-sm">
+                        <thead>
+                                <tr>
+                                        <th>Slno</th><th>Product Name</th><th>Cost</th><th>Color</th><th>MF date</th><th>View Details</th> <th>Action</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr *ngFor="let product of products; let i = index">
+                                        <td>{{i+1}}</td><td>{{product.productname}}</td><td>{{product.productcost}}</td><td>{{product.productcolor}}</td> <td>{{product.manufactdate | date}}</td> <td><a class="mx-2"  (click)="viewdetails(product)"><i class="fas fa-eye"></i></a> </td> <td><a  class="mx-2" (click)="editproduct(i)"> <i class="fas fa-pen-square"></i></a><a (click)="delete(product)"><i class="fas fa-trash-alt"></i></a></td>
+                                </tr>
+                        </tbody>
+
+                </table>
+        </div>
+        
+    </div>
+
+</div>
+

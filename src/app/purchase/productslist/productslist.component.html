@@ -1,0 +1,45 @@
+<div class="alert alert-success " role="alert">
+        Products
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-4 col-lg-6 mb-3  col-12" *ngFor="let product of products">
+        <div class="card rounded">
+           
+            <div class="image rounded">
+              <img src="{{product.productimage}}" class="img-fluid" width="100%">
+            </div>
+            <h5  class="mt-2">{{product.productname | uppercase}}</h5>
+            <p class="mt-2"><b>Cost In RS :</b>  {{product.productcost}}</p>
+            <p class="element"><b>Details : </b>{{product.detail}}</p>
+            <button (click)="buyproduct(product)" class="btn btn-info">BUY</button>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>

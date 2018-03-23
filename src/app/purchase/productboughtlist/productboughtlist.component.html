@@ -1,0 +1,26 @@
+<div class="alert alert-success " role="alert">
+    View Delivery Details
+   </div>
+   <div class="row">
+                <div class="col-lg-12 mb-3">
+                        <div class="card">
+                                <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                <input #gb type="text" pInputText size="50" placeholder="Global Filter">
+                </div>
+                        <p-dataTable [globalFilter]="gb" [value]="item" sortMode="multiple" [rows]="5" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+                                <p-column field="productdetails.productname" header="productname" [sortable]="true"></p-column>
+                                <p-column field="productdetails.productcost" header="productcost" [sortable]="true"></p-column>
+                                <p-column field="productdetails.productcolor" header="productcolor" [sortable]="true"></p-column>
+                                <p-column field="deladdress" header="Adress" [sortable]="true"></p-column>
+                                <p-column field="productdetails.detail" header="detail" [sortable]="true"></p-column>
+                             
+                        </p-dataTable>
+                        </div>
+                
+          
+            </div>
+  </div>
+
+ 
+  

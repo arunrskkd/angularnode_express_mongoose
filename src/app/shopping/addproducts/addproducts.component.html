@@ -1,0 +1,93 @@
+<div  *ngIf="!editmode" class="alert alert-success " role="alert">
+ Add Products
+</div>
+<div  *ngIf="editmode" class="alert alert-success " role="alert">
+        Edit Products
+       </div>
+<div class="row">
+        <div class="col-xl-12 mb-3">
+            <div class="card">
+                    <form   [formGroup]="additemform" (ngSubmit)="onsubmit()" >
+
+                            <div class="row mt-3">
+                              
+                                <div class="col-sm-6">
+                                    <label>Product name</label>
+                                    <input type="text" formControlName="productname" class="form-control">
+                                </div>
+                                <span style="color:red;"  class="mt-sm-5 ml-3 ml-sm-0"  *ngIf="!additemform.get('productname').valid && additemform.get('productname').touched " >please enter something</span>
+                    
+                            </div>
+                            <div class="row mt-3">
+                              
+                                <div class="col-sm-6">
+                                    <label>Product Cost</label>
+                                    <input type="text" formControlName="productcost" class="form-control" pattern="[0-9]*" pKeyFilter="num">
+                                </div>
+                                <span style="color:red;"  class="mt-sm-5 ml-3 ml-sm-0" *ngIf="additemform.get('productcost').hasError('pattern') || !additemform.get('productcost').valid && additemform.get('productcost').touched" >please enter number</span>
+                                <!-- <span style="color:red;"  class=""  *ngIf=" " >please enter something</span> -->
+                            </div>
+                            <div class="row mt-3">
+                              
+                                <div class="col-sm-6">
+                                    <label>Product image url</label>
+                                    <input type="text" formControlName="productimage" class="form-control" #imgpath>
+                                </div>
+                                <span style="color:red;"  class="mt-sm-5 ml-3 ml-sm-0"  *ngIf="!additemform.get('productimage').valid && additemform.get('productimage').touched " >please enter something</span>
+                            </div>
+                            <div class="row " *ngIf="imgpath.value">
+                              
+                                <div class="col-sm-6">
+                                  <img [src]="imgpath.value" width="100px">
+                                </div>
+                    
+                            </div>
+                            <div class="row mt-3">
+                              
+                                    <div class="col-sm-6">
+                                        <label>Manufacturing Date</label><br>
+                                        <p-calendar  formControlName="manufactdate" dateFormat="dd.mm.yy" ></p-calendar> 
+                                    </div>
+                                    <span style="color:red;"  class="mt-sm-5 ml-3 ml-sm-0"  *ngIf="!additemform.get('manufactdate').valid && additemform.get('manufactdate').touched " >please enter something</span>
+                                </div>
+                                
+                            <div class="row mt-3">
+                              
+                                <div class="col-sm-6">
+                                    <label>Product detail</label>
+                                    <input type="text" formControlName="detail" class="form-control">
+                                </div>
+                                <span style="color:red;"  class="mt-sm-5 ml-3 ml-sm-0"  *ngIf="!additemform.get('detail').valid && additemform.get('detail').touched " >please enter something</span>
+                            </div>
+                            
+                            <div class="row mt-3">
+                              
+                                <div class="col-sm-6">
+                                    <label>Product Color</label>
+                                    <input type="text" formControlName="productcolor" class="form-control">
+                                </div>
+                                <span style="color:red;"  class="mt-sm-5 ml-3 ml-sm-0"  *ngIf="!additemform.get('productcolor').valid && additemform.get('productcolor').touched " >please enter something</span>
+                            </div>
+                            
+                            <div class="row my-3">
+                              
+                                <div class="col-sm-6" *ngIf="!editmode">
+                                    <button type="submit" [disabled]="!additemform.valid" class="btn btn-primary">Add Item</button>
+                                </div>
+                                <div class="col-sm-6" *ngIf="editmode">
+                                        <button type="button" (click)="Updateproduct()" [disabled]="!additemform.valid" class="btn btn-primary">Update Item</button>
+                                </div>
+                    
+                            </div>
+                    
+                    
+                          </form>
+            </div>        
+        </div>
+        
+    </div>
+  
+ 
+
+
+

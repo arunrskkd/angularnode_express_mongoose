@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/primeng/resources/themes/omega/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+.card{
+    padding: 20px 25px;    
+ 
+    overflow-y: visible !important;
+   
+}  
+mat-sidenav .ui-state-default a {
+    color: #fff !important;
+}
+mat-sidenav .ui-state-default {
+  border: 1px solid #2d3540 !important;
+  background: #2d3540 !important;
+  color: #fff !important;
+}
+mat-sidenav .mat-drawer{
+    width: 100%;
+} 
+mat-sidenav .ui-widget-content {
+    border: 1px solid #2d3540;
+    background: #2d3540;
+    color: #fff;
+}
+mat-sidenav .ui-widget-content a {
+    color: #fff !important;
+}
+mat-sidenav .ui-panelmenu .ui-panelmenu-content .ui-menuitem-link:hover {
+ 
+    color: #212121 !important;
+  
+}
+mat-sidenav app-menu{
+    width: 100%;
+    padding: 20px 0;
+}
+input.ng-invalid.ng-touched{
+    border-color: red;
+}
+select.ng-invalid.ng-touched{
+    border-color: red;
+}
+p-calendar.ng-invalid.ng-touched input{
+    border-color: red;
+}

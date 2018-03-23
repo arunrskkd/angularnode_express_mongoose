@@ -1,0 +1,60 @@
+.example-container {
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-sidenav {
+    display: flex;
+   
+    width: 200px;
+    background: #2d3540;
+  }
+  
+  .example-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .example-header a{
+      width: 38px;
+     
+      }
+      .example-header h1{
+      margin-left: 23px;
+      }
+      .example-sidenav ul li{
+        display: block;
+        padding: 10px 16px;
+        text-align: center;
+        
+
+      }
+      .example-sidenav ul li a{
+        color: #fff;
+      }
+      .example-sidenav ul{
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 20px 0;
+      }
+      .example-header a{
+        cursor: pointer;
+      }
+      .mat-sidenav-content{
+         background: #e9ecef;
+      }
+     
+     
+    
